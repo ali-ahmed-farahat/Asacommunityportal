@@ -1,0 +1,278 @@
+/* 🌙 General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* 🔰 Header Styling */
+#main-header {
+    width: 100%;
+    background: linear-gradient(to right, #000000, #D4AF37);
+    color: white;
+    padding: 15px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.logo-container {
+    position: absolute;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#asa-logo {
+    width: 60px;
+    height: auto;
+}
+
+.org-names {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+    color: #FFFFFF;
+}
+
+.org-names span:first-child {
+    color: #D4AF37;
+    font-weight: bold;
+}
+
+.main-title {
+    text-align: center;
+    flex: 1;
+}
+
+.main-title h1 {
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* 💬 Chat + 📹 Video Section */
+#page-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    height: calc(100vh - 120px); /* Adjust height considering header */
+    padding: 20px 30px 20px;
+    gap: 20px;
+    overflow: hidden;
+}
+
+/* 📹 YouTube Video Container */
+#video-container {
+    flex: 1 1 60%;
+    border-radius: 20px;
+    background-color: #000000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#video-container iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: none;
+}
+
+/* 💬 Chat Container */
+#chat-container {
+    width: 450px;
+    height: 100%;
+    background: linear-gradient(to bottom, #333, #111);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#chatbox {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #f9f9f9;
+}
+
+.message {
+    max-width: 75%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    word-wrap: break-word;
+    line-height: 1.6;
+}
+
+.user {
+    background-color: #6c757d;
+    align-self: flex-end;
+    border-bottom-right-radius: 0;
+    color: white;
+}
+
+.bot {
+    background-color: #343a40;
+    align-self: flex-start;
+    border-bottom-left-radius: 0;
+    color: white;
+}
+
+/* ✏️ Sticky Input Container (Always Visible) */
+#input-container {
+    display: flex;
+    padding: 5px;
+    gap: 10px;
+    background-color: #222;
+    position: relative;
+    bottom: 0;
+}
+
+#user-input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #555;
+    font-size: 0.9rem;
+    background-color: #333;
+    color: white;
+    height: 40px;
+}
+
+#send-btn {
+    padding: 8px 20px;
+    border-radius: 10px;
+    background-color: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    height: 40px;
+}
+
+#send-btn:hover {
+    background-color: #555;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 1200px) {
+    #page-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    #video-container, #chat-container {
+        width: 100%;
+        max-width: 100%;
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    #video-container, #chat-container {
+        height: 300px;
+    }
+}
+
+@media (max-width: 500px) {
+    #video-container, #chat-container {
+        height: 250px;
+    }
+
+    #user-input, #send-btn {
+        height: 35px;
+    }
+}
+
+/* 🌙 General Styling */
+* {
+    box-sizing: border-box; /* Add this line */
+}
+
+#page-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    height: calc(100vh - 120px); /* Adjust height considering header */
+    padding: 20px; /* Adjust padding */
+    gap: 20px;
+    overflow: hidden;
+}
+
+/* 💬 Chat Container */
+#chat-container {
+    width: 450px; /* You can adjust this width */
+    max-width: 100%; /* Ensure it doesn't exceed the container */
+    height: 100%;
+    background: linear-gradient(to bottom, #333, #111);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    overflow: auto; /* Change to auto to allow scrolling */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Adjust the height of the chatbox */
+#chatbox {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #f9f9f9;
+}
+
+/* ✏️ Sticky Input Container (Always Visible) */
+#input-container {
+    display: flex;
+    padding: 5px;
+    gap: 10px;
+    background-color: #222;
+    position: relative;
+    bottom: 0;
+}
+
+/* Adjust the height of the input field */
+#user-input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #555;
+    font-size: 0.9rem;
+    background-color: #333;
+    color: white;
+    height: 40px; /* Keep this height */
+}
+
+#send-btn {
+    padding: 8px 20px;
+    border-radius: 10px;
+    background-color: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    height: 40px; /* Keep this height */
+}
