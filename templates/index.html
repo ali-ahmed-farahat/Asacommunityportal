@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>بوابة الجهاز المركزي للمحاسبات للتوعية المجتمعية</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+<!-- 🔰 Header Section -->
+<header id="main-header">
+    <div class="header-content">
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='ASAlogo.jpg') }}" alt="ASA Logo" id="asa-logo">
+            <div class="org-names">
+                <span>الجهاز المركزي للمحاسبات</span>
+                <span>Accountability State Authority</span>
+            </div>
+        </div>
+        <div class="main-title">
+            <h1>بوابة الجهاز المركزي للمحاسبات للتوعية المجتمعية</h1>
+        </div>
+    </div>
+</header>
+
+<!-- 💬 Chat + 📹 Video Section -->
+<div id="page-container">
+    <!-- 📹 YouTube Video Box -->
+    
+    <div id="video-container">
+        <button onclick="switch1()"><</button>
+        <iframe width="100%" height="100%"
+                src="https://www.youtube.com/embed/6ZPjrI-irpw?si=apjk2vZRbLB-iEpv"
+                title="YouTube video player"
+                id = "youtubePlayer"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+        </iframe>
+        <button onclick="switch2()">></button>
+        <script>
+            function switch2() {
+                document.getElementById("youtubePlayer").src = "https://www.youtube.com/embed/q1d_s9LnL0E?si=YhfOZA9hvEmW_snt";
+              }
+            function switch1() {
+                document.getElementById("youtubePlayer").src = "https://www.youtube.com/embed/6ZPjrI-irpw?si=apjk2vZRbLB-iEpv";
+            }
+        </script>
+    </div>
+
+    <!-- 💬 Chat Container -->
+    <div id="chat-container" class="hidden">
+        <div id="chatbox"></div>
+        <div id="input-container">
+            <input type="text" id="user-input" placeholder="اكتب رسالتك هنا..." />
+            <button id="send-btn">إرسال</button>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
