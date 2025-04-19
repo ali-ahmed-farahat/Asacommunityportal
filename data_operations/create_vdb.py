@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 import shutil
 from langchain_openai import OpenAIEmbeddings
 load_dotenv()
-OPENAI_API = os.getenv("OPENAI_API")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 Data_Path = "E:\Ali\Professional Life\GovChatbot\cleaned text"
 
 def load_documents():
@@ -34,7 +34,7 @@ def save_db(chunks):
         shutil.rmtree(CHROMA_PATH)
     
     db = Chroma.from_documents(
-        chunks, OpenAIEmbeddings(api_key = OPENAI_API), persist_directory=CHROMA_PATH
+        chunks, OpenAIEmbeddings(api_key = OPENAI_API_KEY), persist_directory=CHROMA_PATH
     )
     
     db.persist()

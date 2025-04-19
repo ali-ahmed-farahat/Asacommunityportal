@@ -5,10 +5,10 @@ from dotenv import load_dotenv
 from search_vdb import search
 
 load_dotenv()
-OPENAI_API = os.getenv("OPENAI_API_KEY")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 CHROMA_PATH = "chroma"
-openai.api_key = OPENAI_API      
+openai.api_key = OPENAI_API_KEY      
 class Agent:
   def __init__(self):
      self.sys_msg = NO_VALUE_PROMPT

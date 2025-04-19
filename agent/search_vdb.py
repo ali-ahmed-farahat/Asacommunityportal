@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
-OPENAI_API = os.getenv("OPENAI_API")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 def search(query, CHROMA_PATH):
     # parser = argparse.ArgumentParser()
     # parser.add_argument(query, type=str, help="The query text.")
@@ -12,7 +12,7 @@ def search(query, CHROMA_PATH):
     # query_text = args.query_text
 
     # Prepare the DB.
-    embedding_function = OpenAIEmbeddings(api_key=OPENAI_API)
+    embedding_function = OpenAIEmbeddings(api_key=OPENAI_API_KEY)
     db = Chroma(persist_directory=CHROMA_PATH, embedding_function=embedding_function)
 
     # Search the DB.
