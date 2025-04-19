@@ -24,8 +24,8 @@ text_splitter = RecursiveCharacterTextSplitter(
 chunks = text_splitter.split_documents(load_documents())
 print(len(chunks), " is the number of the new chunks")
 
-example_chunk = chunks[10]
-print(example_chunk)
+# example_chunk = chunks[10]
+# print(example_chunk)
 
 CHROMA_PATH = "chroma"
 
@@ -37,7 +37,6 @@ def save_db(chunks):
         chunks, OpenAIEmbeddings(api_key = OPENAI_API_KEY), persist_directory=CHROMA_PATH
     )
     
-    db.persist()
     print(f"Saved {len(chunks)} chunks to {CHROMA_PATH}.")
     
 save_db(chunks)

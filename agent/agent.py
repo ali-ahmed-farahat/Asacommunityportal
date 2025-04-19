@@ -1,8 +1,8 @@
 import openai
-from prompt import NO_VALUE_PROMPT
+from agent.prompt import NO_VALUE_PROMPT
 import os
 from dotenv import load_dotenv
-from search_vdb import search
+from agent.search_vdb import search
 
 load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
@@ -40,4 +40,4 @@ class Agent:
 #search("ما هو تأثير الفساد الأقتصادي", CHROMA_PATH)
 # search("How are you?", CHROMA_PATH)
 agent = Agent()
-print(agent.respond("hi, how are you?"))
+print(agent.respond("من هو رئيس الجهاز المركزي للمجاسبات"))

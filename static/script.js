@@ -57,12 +57,25 @@ async function sendMessage() {
 
     const botMsgDiv = appendMessage("bot", "", true);
 
-    const response = await fetch("/get_response", {
-        method: "POST",
-        body: JSON.stringify({ message }),
-        headers: { "Content-Type": "application/json" }
-    }).then(res => res.json());
-
-    botMsgDiv.innerHTML = `${marked.parse(response.response)}`;
+    try {
+        const response = await fetch("/get_response", {
+            method: "POST",
+            body: JSON.stringify({ message }),
+            headers: { 
+                "Content-Type": "application/json; charset=utf-8"
+            }
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        botMsgDiv.innerHTML = `${marked.parse(data.response)}`;
+    } catch (error) {
+        console.error('Error:', error);
+        botMsgDiv.innerHTML = "عذرًا، حدث خطأ أثناء معالجة طلبك. يرجى المحاولة مرة أخرى.";
+    }
+    
     scrollToBottom();  // ✅ Ensure latest message is visible
 }
