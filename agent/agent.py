@@ -39,5 +39,5 @@ class Agent:
 
 #search("ما هو تأثير الفساد الأقتصادي", CHROMA_PATH)
 # search("How are you?", CHROMA_PATH)
-agent = Agent()
-print(agent.respond("من هو رئيس الجهاز المركزي للمجاسبات"))
+# agent = Agent()
+# print(agent.respond("من هو رئيس الجهاز المركزي للمجاسبات"))
