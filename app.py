@@ -1,6 +1,7 @@
 from agent.agent import Agent
 import os
 from flask import Flask, render_template, request, jsonify
+from agent.search_vdb import search
 app = Flask(__name__)
 
 agent = Agent()
