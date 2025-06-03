@@ -7,7 +7,7 @@ import shutil
 from langchain_openai import OpenAIEmbeddings
 load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-Data_Path = "E:\Ali\Professional Life\GovChatbot\cleaned text"
+Data_Path = r"E:\Ali\Professional Life\GovChatbot\cleaned text"
 
 def load_documents():
     loader = DirectoryLoader(Data_Path, glob = "*.txt")

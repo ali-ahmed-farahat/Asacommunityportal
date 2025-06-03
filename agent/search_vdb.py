@@ -32,4 +32,5 @@ def search(query, CHROMA_PATH):
         return context_text
     
     
-search("من هو رئيس الجهاز المركزي للمجاسبات", "chroma")
+# result = search("من هو رئيس الجهاز المركزي للمجاسبات", "chroma")
+# print(result)

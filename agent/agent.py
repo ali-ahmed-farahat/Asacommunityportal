@@ -9,6 +9,7 @@ load_dotenv()
 
 # Get API key and verify it's loaded
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+print(OPENAI_API_KEY)
 if not OPENAI_API_KEY:
     raise ValueError("OPENAI_API_KEY environment variable is not set")
 
@@ -47,7 +48,6 @@ class Agent:
         self.history.append({"role": "assistant", "content": response_message})
         return response_message
 
-#search("ما هو تأثير الفساد الأقتصادي", CHROMA_PATH)
-# search("How are you?", CHROMA_PATH)
+# search("من هو رئيس الجهاز المركزي للمجاسبات", CHROMA_PATH)
 # agent = Agent()
 # print(agent.respond("من هو رئيس الجهاز المركزي للمجاسبات"))
